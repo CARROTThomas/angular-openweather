@@ -11,7 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "angular-cli-ghpages:deploy",
           "options": {
             "outputPath": "dist/angular-openweather",
             "index": "src/index.html",
@@ -89,6 +89,13 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/angular-openweather/",
+            "repo": "https://github.com/CARROTThomas/angular-openweather.git"
           }
         }
       }
