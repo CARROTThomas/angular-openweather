@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row mb-4">
+    <div class="">
+      <div *ngIf="weather && weather.main" class="container-main">
+        <h1>Ville: {{ weather.name }}</h1>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Temperature</h5>
+          <div *ngIf="weather && weather.main" class="container-main">
+            <p>Temperature: {{ (weather.main.temp - 273.15) | number:'1.2-2' }}°C</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Coordinates</h5>
+          <div class="container-coord" *ngIf="weather && weather.coord">
+            <p>Longitude: {{ weather.coord.lon }}</p>
+            <p>Latitude: {{ weather.coord.lat }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Weather Information</h5>
+          <div *ngIf="weather && weather.weather" class="container-weather">
+            <p>Weather Information:</p>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let weatherDetail of weather.weather">
+                <p>Main: {{ weatherDetail.main }}</p>
+                <p>Description: {{ weatherDetail.description }}</p>
+                <p>Icon: {{ weatherDetail.icon }}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

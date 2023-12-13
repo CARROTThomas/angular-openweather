@@ -1,0 +1,29 @@
+
+
+
+
+<div class="mt-5 pt-5 mb-5 pb-5">
+  <div class="container">
+
+
+      <div class="d-flex justify-content-center mb-4">
+        <a href="https://openweathermap.org/" target="_blank">
+          <img class="border p-4" src="assets/images/imgAPI.svg" alt="image API" width="400" height="400">
+        </a>
+      </div>
+
+
+    <form
+      [formGroup]="form"
+      (submit)="submit()"
+    >
+
+      <div class="d-flex justify-content-between align-items-center">
+        <input type="text" formControlName="city" name="city" id="city" class="form-control" placeholder="city : Paris">
+        <button type="submit" class="btn btn-primary ms-1">Search</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
